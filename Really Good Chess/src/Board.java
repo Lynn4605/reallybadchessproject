@@ -9,7 +9,9 @@ public class ChessBoard {
   //piece colors
     private static final boolean WHITE = true;
     private static final boolean BLACK = false;
-
+   
+   
+//what the board would look like without any randomization 
 private final Piece[][] UNRANDOMIZED = {
             { new Rook(WHITE), new Knight(WHITE), new Bishop(WHITE),
                     new Queen(WHITE), new King(WHITE), new Bishop(WHITE),
