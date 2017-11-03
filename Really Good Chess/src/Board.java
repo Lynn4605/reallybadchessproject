@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import javax.swing.*;
 
 public class ChessBoard {
 
@@ -10,7 +11,10 @@ public class ChessBoard {
     private static final boolean WHITE = true;
     private static final boolean BLACK = false;
    
-   
+   private JFrame board = new JFrame();
+   board.setSize(1000, 1000);
+   board.setLayout(null);
+   board.setVisible(true);
 //what the board would look like without any randomization 
 private final Piece[][] UNRANDOMIZED = {
             { new Rook(WHITE), new Knight(WHITE), new Bishop(WHITE),
