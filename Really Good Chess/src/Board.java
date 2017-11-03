@@ -29,5 +29,18 @@ private final Piece[][] UNRANDOMIZED = {
             { new Rook(BLACK), new Knight(BLACK), new Bishop(BLACK),
                     new Queen(BLACK), new King(BLACK), new Bishop(BLACK),
                     new Knight(BLACK), new Rook(BLACK) } };
+   private final Piece[][] white ={
+      { { new Rook(WHITE), new Knight(WHITE), new Bishop(WHITE),
+                    new Queen(WHITE), new King(WHITE), new Bishop(WHITE),
+                    new Knight(WHITE), new Rook(WHITE) },
+            { new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE),
+                    new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE),
+                    new Pawn(WHITE), new Pawn(WHITE) } };
+      private final Piece[][] black = {{ new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK),
+                    new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK),
+                    new Pawn(BLACK), new Pawn(BLACK) },
+            { new Rook(BLACK), new Knight(BLACK), new Bishop(BLACK),
+                    new Queen(BLACK), new King(BLACK), new Bishop(BLACK),
+                    new Knight(BLACK), new Rook(BLACK) } };
   
   
