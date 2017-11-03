@@ -11,10 +11,10 @@ public class ChessBoard {
     private static final boolean WHITE = true;
     private static final boolean BLACK = false;
    
-   private JFrame board = new JFrame();
-   board.setSize(1000, 1000);
-   board.setLayout(null);
-   board.setVisible(true);
+   private JFrame gameframe = new JFrame("Really Good Chess");
+   gameframe.setSize(1000, 1000);
+   gameframe.setLayout(null);
+   gameframe.setVisible(true);
 //what the board would look like without any randomization 
 private final Piece[][] UNRANDOMIZED = {
             { new Rook(WHITE), new Knight(WHITE), new Bishop(WHITE),
