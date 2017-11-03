@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class ChessBoard {
 
    
-   //The size of the board.
+   //The size of the board. 8*8?
     public static final int SIZE = 8;
 
   //piece colors
