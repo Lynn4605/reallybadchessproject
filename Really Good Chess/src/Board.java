@@ -15,6 +15,8 @@ public class ChessBoard {
    gameframe.setSize(1000, 1000);
    gameframe.setLayout(null);
    gameframe.setVisible(true);
+   
+   private final Piece[] board = new Piece[64];
 //what the board would look like without any randomization 
 private final Piece[][] UNRANDOMIZED = {
             { new Rook(WHITE), new Knight(WHITE), new Bishop(WHITE),
