@@ -3,7 +3,7 @@ public class king{
     if (c==1){
     }
   public void up(){
-    if (y<700){
+    if (y>100){
       y+=100;
       repaint;
     }
@@ -11,7 +11,7 @@ public class king{
       System.out.println("Cannot move forward");
   }
   public void down(){
-    if (Y>100){
+    if (Y<700){
       y-=100;
       repaint;
     }
@@ -35,7 +35,7 @@ public class king{
       System.out.println("Cannot move right");
   }
   public void upright(){
-    if (x<700 && y<700){
+    if (x<700 && y>100){
       x+=100;
       y+=100;
       repaint;
@@ -44,7 +44,7 @@ public class king{
       System.out.println("Cannot move forwards and right");
   }
   public void upleft(){
-    if (x>100 && y<700){
+    if (x>100 && y>100){
       x-=100;
       y+=100;
       repaint;
@@ -53,7 +53,7 @@ public class king{
       System.out.println("Cannot move forwards and left");
   }
   public void downleft(){
-    if (x>100 && y>100){
+    if (x>100 && y<700){
       x-=100;
       y-=100;
       repaint;
@@ -62,7 +62,7 @@ public class king{
       System.out.println("Cannot move backwards and left");
   }
   public void downright(){
-    if (x<700 && y>100){
+    if (x<700 && y<700){
       x+=100;
       y-=100;
       repaint;
