@@ -1,7 +1,11 @@
 public class king{
   public king(int c, int x, int y )
+    //if the king is white
     if (c==1){
     }
+  //if the king is black
+  if(c==0){
+  }
   public void up(){
     y+=100;
     repaint;
