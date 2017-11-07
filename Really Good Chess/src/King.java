@@ -1,45 +1,73 @@
 public class king{
   public king(int c, int x, int y )
-    //if the king is white
     if (c==1){
     }
-  //if the king is black
-  if(c==0){
-  }
   public void up(){
-    y+=100;
-    repaint;
+    if (y<700){
+      y+=100;
+      repaint;
+    }
+    else
+      System.out.println("Cannot move forward");
   }
   public void down(){
-    y-=100;
-    repaint;
+    if (Y>100){
+      y-=100;
+      repaint;
+    }
+    else
+      System.out.println("Cannot move backwards");
   }
   public void left(){
-    x-=100;
-    repaint;
+    if (x>100){
+      x-=100;
+      repaint;
+    }
+     else
+      System.out.println("Cannot move left");
   }
   public void right(){
-    x+=100;
-    repaint;
+    if (x<700){
+      x+=100;
+      repaint;
+    }
+     else
+      System.out.println("Cannot move right");
   }
   public void upright(){
-    x+=100;
-    y+=100;
-    repaint;
+    if (x<700 && y<700){
+      x+=100;
+      y+=100;
+      repaint;
+    }
+     else
+      System.out.println("Cannot move forwards and right");
   }
   public void upleft(){
-    x-=100;
-    y+=100;
-    repaint;
+    if (x>100 && y<700){
+      x-=100;
+      y+=100;
+      repaint;
+    }
+     else
+      System.out.println("Cannot move forwards and left");
   }
   public void downleft(){
-    x-=100;
-    y-=100;
-    repaint;
+    if (x>100 && y>100){
+      x-=100;
+      y-=100;
+      repaint;
+    }
+     else
+      System.out.println("Cannot move backwards and left");
   }
   public void downright(){
-    x+=100;
-    y-=100;
-    repaint;
+    if (x<700 && y>100){
+      x+=100;
+      y-=100;
+      repaint;
+    }
+     else
+      System.out.println("Cannot move backwards and right");
   }
 }
