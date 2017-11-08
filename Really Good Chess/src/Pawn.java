@@ -1,4 +1,4 @@
-public class Pawn{
+public class Pawn extends public class Piece{
   public Pawn(int c, int x, int y, boolean firstmove){
     firstmove =true;
     //if pawn is black 
