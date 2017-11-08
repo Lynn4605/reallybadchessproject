@@ -9,6 +9,7 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.awt.event.MouseListener;
  
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
