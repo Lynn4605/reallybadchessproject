@@ -19,38 +19,57 @@ public class knight{
     x-=100;
     y-=300;
     repaint;
-    }
+    } else
+      System.out.println("Knight cannnot move up and left");
   }
   public void downRight(){
-    if(x
+    if(x<700 || y<600)}
     x+=100;
     y+=300;
     repaint;
+} else
+      System.out.println("Knight cannnot move down and right");
   }
   public void downLeft(){
+    if(x>100 || y<600){
     x-=100;
     y+=300;
     repaint;
+    } else
+      System.out.println("Knight cannnot move down and left");
   }
   public void rightSideUp(){
+    if(x<600 || y>100){
     x+=300;
     y-=100;
     repaint;
+  } else
+      System.out.println("Knight cannnot move right and up");
   }
   public void rightSideDown(){
+    if(x<600 || y <700){
     x+=300;
     y+=100;
     repaint;
+    } else
+      System.out.println("Knight cannnot move right and down");
   }
   public void leftSideUp(){
+    if(x>200 || y>100){
     x-=300;
     y-=100;
     repaint;
+    }
+     else
+      System.out.println("Knight cannnot move left and up");
   }
   public void rightSideDown(){
+    if(x<600 || y<700){
     x-=300;
     y+=100;
     repaint;
+    } else
+      System.out.println("Knight cannnot move up and down");
   }
 
 }
