@@ -1,4 +1,4 @@
-public class knight{
+public class knight extends public class Piece{
   public knight(int c, int x, int y )
     //if the knight is black
     if (c==1){
