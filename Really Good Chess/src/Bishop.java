@@ -1,5 +1,6 @@
-public class Bishop{
-  moveDiagonal
+public class Bishop extends public class Piece{
+  public moveupright{
+    
     
     
 }
