@@ -9,8 +9,6 @@ import javax.imageio.*;
 
 public class BPrint {
 	// change/add instance variables as needed
-	float x, deltaX, accelX;
-	float y, deltaY, accelY;
 	BufferedImage img;
 
 	public BPrint() {
