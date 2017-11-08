@@ -1,4 +1,4 @@
-public class king{
+public class king extends public class Piece{
   public king(int c, int x, int y )
     if (c==1){
     }
