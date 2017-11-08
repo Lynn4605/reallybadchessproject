@@ -8,7 +8,7 @@ public class Pawn{
     if (c==0){
     }
     if (firstmove==true){
-      public void double up{
+      public void doubleup{
         y+=200;
         firstmove = false;
       }
