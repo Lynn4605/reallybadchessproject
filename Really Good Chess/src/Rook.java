@@ -1,4 +1,4 @@
-public class Rook{
+public class Rook extends public class Piece{
   public Rook(int c, int x, int y){
   }
   if (c==0){
