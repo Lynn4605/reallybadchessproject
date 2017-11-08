@@ -1,4 +1,4 @@
-public class Queen{
+public class Queen extends public class Piece{
   public Queen(int c, int x, int y){
   }
   //if Queen is blacak
