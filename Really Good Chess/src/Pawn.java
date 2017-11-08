@@ -1,15 +1,21 @@
 public class Pawn{
-  public Pawn(int c, int x, int y){
+  public Pawn(int c, int x, int y, boolean firstmove){
+    firstmove =true;
     //if pawn is black 
     if (c==1){
     }
     //if pawn is white 
     if (c==0){
     }
-    
+    if (firstmove==true){
+      public void double up{
+        y+=200;
+        firstmove = false;
+      }
     public void up{
       if (y<700){
         y+=100;
+        firstmove=false;
       }
       //convert to a dead piece
       else{ System.out.println("Cannot move forward");
@@ -21,6 +27,7 @@ public class Pawn{
     //}
       x+=100;
       y+=100;
+      firstmove=false;
     }
     
     public void upleft{
@@ -28,5 +35,6 @@ public class Pawn{
     //}
       x-=100;
       y+=100;
+      firstmove=false;
     }
     
