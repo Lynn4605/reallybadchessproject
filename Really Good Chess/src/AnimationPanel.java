@@ -15,9 +15,12 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
  
 public class AnimationPanel implements MouseListener{
- public void mousePressed{
   blankArea.addMouseListener(this);
   addMouseListener(this);
+ 
+ public void mousePressed(MouseEvent e){
+  
+ }
 }
 
 public class AnimationPanel extends JPanel implements ActionListener
