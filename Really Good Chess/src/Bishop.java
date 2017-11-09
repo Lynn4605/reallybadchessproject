@@ -7,7 +7,8 @@ public class Bishop extends Piece{
 		xcoordinate = x;
 		color = c;
 	}
-	public void moveupright(){
+	
+	for(ycoordinate+=100, xcoordinate+=100; 
     
     
   }
