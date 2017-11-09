@@ -15,7 +15,7 @@ import javax.awt.event.MouseListener;
 import javax.awt.event.MouseAdapter;
 import javax.awt.event.MouseEvent;
  
-public class AnimationPanel extends JPanel implements ActionListener implements MouseListener
+public class AnimationPanel extends JPanel implements ActionListener, MouseListener
 {
                 private Timer t;
                 private BPrint boardy;
@@ -41,6 +41,7 @@ public class AnimationPanel extends JPanel implements ActionListener implements 
                 {
                                System.out.println("Tick"); 
                 }
+                public void MousePressed()
 }
  
  
