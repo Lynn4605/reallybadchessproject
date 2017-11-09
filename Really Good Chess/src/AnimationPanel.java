@@ -12,7 +12,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
  
-public class AnimationPanel extends JPanel implements ActionListener
+public class AnimationPanel extends JPanel implements ActionListener implements MouseListener
 {
                 private Timer t;
                 private BPrint boardy;
