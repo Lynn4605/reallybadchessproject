@@ -25,7 +25,7 @@ public class Board extends JFrame {
 	int b = 47;
 	while( b<64)
 	{
-		board[b] = (black[((int) (Math.random() * 16))]);
+		board[b] = (black[((int) (Math.random() * 6))]);
 		b++;
 	}
 
