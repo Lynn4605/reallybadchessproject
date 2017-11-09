@@ -1,2 +1,2 @@
-public class Piece{
+public class Piece extends BPrint{
 }
