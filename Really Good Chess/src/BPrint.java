@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -10,7 +11,8 @@ import javax.imageio.*;
 public class BPrint {
 	// change/add instance variables as needed
 	BufferedImage img;
-
+	Scanner image = new Scanner(System.in);
+	image = image.next();
 	public BPrint() {
 		// img = new ImageIcon("").getImage();
 		try {
