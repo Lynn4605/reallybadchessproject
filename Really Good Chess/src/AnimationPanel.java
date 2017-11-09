@@ -11,6 +11,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import javax.awt.event.MouseListener;
  
 public class AnimationPanel extends JPanel implements ActionListener implements MouseListener
 {
