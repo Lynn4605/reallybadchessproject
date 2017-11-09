@@ -15,8 +15,13 @@ import javax.awt.event.MouseListener;
 import javax.awt.event.MouseAdapter;
 import javax.awt.event.MouseEvent;
  
-public class AnimationPanel extends JPanel implements ActionListener, MouseListener
+public class AnimationPanel extends JPanel implements ActionListener implements MouseListener
 {
+   
+                addMouseListener(mouseClicked());                
+           
+                
+                
                 private Timer t;
                 private BPrint boardy;
                 //change/add instance variables as needed
@@ -41,7 +46,16 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
                 {
                                System.out.println("Tick"); 
                 }
-                public void MousePressed()
+                
+ public void mouseClicked(MouseEvent e){
+ System.out.println("Clicked");
+ System.out.println(e.getX() + ", " + e.getY);
+ }
+ 
+ public void mouseReleased(MouseEvent e){ }
+ public void mouseEntered(MouseEvent e){ }
+ public void mouseExited(MouseEvent e){ }
+ public void mousePressed (MouseEvent e){ }        
 }
  
  
