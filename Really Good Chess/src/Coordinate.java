@@ -8,7 +8,7 @@ public class Coordinate{
     ycoordinate = y;
   }
   public void Block(){
-    String Block = (String)(xarray[xcoordinate/100])+(String)(7-yarray[ycoordinate/100])
+    String Block = (xarray[xcoordinate/100])+(yarray[ycoordinate/100]);
   }
   public void point(){
     xcoordinate = ((xcoordinate/100)*100)+50;
