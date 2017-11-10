@@ -11,17 +11,15 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.awt.event.MouseListener;
-import javax.awt.event.MouseAdapter;
-import javax.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
  
-public class AnimationPanel extends JPanel implements ActionListener implements MouseListener
+public class AnimationPanel extends JPanel implements ActionListener, MouseListener
 {
-   
-                addMouseListener(mouseClicked());                
+            
            
-                
-                
+              
                 private Timer t;
                 private BPrint boardy;
                 //change/add instance variables as needed
@@ -49,7 +47,7 @@ public class AnimationPanel extends JPanel implements ActionListener implements 
                 
  public void mouseClicked(MouseEvent e){
  System.out.println("Clicked");
- System.out.println(e.getX() + ", " + e.getY);
+ System.out.println(e.getX() + ", " + e.getY());
  }
  
  public void mouseReleased(MouseEvent e){ }
@@ -57,5 +55,6 @@ public class AnimationPanel extends JPanel implements ActionListener implements 
  public void mouseExited(MouseEvent e){ }
  public void mousePressed (MouseEvent e){ }        
 }
+ 
  
  
