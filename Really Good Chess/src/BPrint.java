@@ -7,16 +7,19 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.*;
-
 public class BPrint {
 	// change/add instance variables as needed
 	BufferedImage img;
-	Scanner image = new Scanner(System.in);
-	image = image.next();
+	Scanner imag = new Scanner(System.in);
+	String image = imag.next();
+	Scanner xcoordinate = new Scanner(System.in);
+	int x = xcoordinate.nextInt();
+	Scanner ycoordinate = new Scanner(System.in);
+	int y=ycoordinate.nextInt();
 	public BPrint() {
 		// img = new ImageIcon("").getImage();
 		try {
-			img = ImageIO.read(new File("board.jpg"));
+			img = ImageIO.read(new File(image));
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
@@ -24,7 +27,7 @@ public class BPrint {
 
 	// Overrides the paint method to draw whatever you want.
 	public void paintSelf(Graphics g, ImageObserver i) {
-		g.drawImage(img, 0, 0, i);
+		g.drawImage(img, x, y, i);
 
 	}
 
