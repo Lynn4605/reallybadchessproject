@@ -24,20 +24,25 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
                 private BPrint boardy;
                 //change/add instance variables as needed
                 
-                public AnimationPanel()
+          public AnimationPanel()
                 {
                                
                                 t = new Timer(20,this);
                                 t.start();
-                                boardy = new BPrint();
+                                board = new BPrint();
+                                Piece1 = new BPrint();
+                                Piece2 = new BPrint();
                 }
                 
                 //Overrides the paint method to draw whatever you want.
                 public void paint(Graphics g)
                 {
                                 g.clearRect(0, 0, getWidth(), getHeight());
-                                boardy.paintSelf(g, this);
+                                board.paintSelf(g, this);
+                                Piece1.paintSelf(g, this);
+                                Piece2.paintSelf(g, this);
                 }
+                
                 
                 //Modify this method as needed.
                 public void actionPerformed(ActionEvent e)
