@@ -11,8 +11,11 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
  
-public class AnimationPanel extends JPanel implements ActionListener
+public class AnimationPanel extends JPanel implements ActionListener, MouseListener
 {
                 private Timer t;
                 private BPrint board;
@@ -137,6 +140,18 @@ public class AnimationPanel extends JPanel implements ActionListener
                 public void actionPerformed(ActionEvent e)
                 {
                 }
+                
+                 public void mouseClicked(MouseEvent e){
+	 
+	   System.out.println("Clicked");
+	   System.out.println(e.getX() + ", " + e.getY() + "   Click Count = "+e.getClickCount());
+
+ }
+ 
+ public void mouseReleased(MouseEvent e){ }
+ public void mouseEntered(MouseEvent e){ }
+ public void mouseExited(MouseEvent e){ }
+ public void mousePressed (MouseEvent e){ }             
 }
  
  
