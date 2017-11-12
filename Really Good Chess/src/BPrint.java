@@ -12,10 +12,15 @@ public class BPrint {
 	BufferedImage img;
 	int xcoordinate;
 	int ycoordinate;
-	public BPrint(String image, int x, int y) {
+	boolean color;
+	public BPrint(String image, int x, int y, boolean c) {
+		color = c;
+		String prefix = "B";
+		if (color==false)
+			prefix = "W";
 		// img = new ImageIcon("").getImage();
 		try {
-			img = ImageIO.read(new File(image));
+			img = ImageIO.read(new File(prefix + image));
 			xcoordinate = x;
 			ycoordinate = y;
 		} catch (IOException ioe) {

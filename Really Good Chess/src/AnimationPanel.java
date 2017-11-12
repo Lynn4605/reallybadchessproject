@@ -11,12 +11,16 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
  
-public class AnimationPanel extends JPanel implements ActionListener, MouseListener
+public class AnimationPanel extends JPanel implements ActionListener
 {
+	 BufferedImage boardimage;{
+	 try {
+			boardimage = ImageIO.read(new File("board.jpg"));
+	 }
+	 catch (IOException ioe) {
+			ioe.printStackTrace();}
+		}
                 private Timer t;
                 private BPrint board;
                 private BPrint BRook1;
@@ -58,48 +62,46 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
                                
                                 t = new Timer(20,this);
                                 t.start();
-                                board = new BPrint("board.jpg", 0, 0);
-                                BRook1 = new BPrint("BRook.png", 0, 0);
-                                BKnight1 = new BPrint("BKnight.png", 100, 0);
-                                BBishop1 = new BPrint("BBishop.png", 200, 0);
-                                BQueen = new BPrint("BQueen.png", 300, 0);
-                                BKing = new BPrint("BKing.png", 400, 0);
-                                BBishop2 = new BPrint("BBishop.png", 500, 0);
-                                BKnight2 = new BPrint("BKnight.png", 600, 0);
-                                BRook2 = new BPrint("BRook.png", 700, 0);
-                                BPawn1 = new BPrint("BPawn.png", 0, 100);
-                                BPawn2 = new BPrint("BPawn.png", 100, 100);
-                                BPawn3 = new BPrint("BPawn.png", 200, 100);
-                                BPawn4 = new BPrint("BPawn.png", 300, 100);
-                                BPawn5 = new BPrint("BPawn.png", 400, 100);
-                                BPawn6 = new BPrint("BPawn.png", 500, 100);
-                                BPawn7 = new BPrint("BPawn.png", 600, 100);
-                                BPawn8 = new BPrint("BPawn.png", 700, 100);  
-                                WRook1 = new BPrint("WRook.png", 0, 700);
-                                WKnight1 = new BPrint("WKnight.png", 100, 700);
-                                WBishop1 = new BPrint("WBishop.png", 200, 700);
-                                WQueen = new BPrint("WQueen.png", 300, 700);
-                                WKing = new BPrint("WKing.png", 400, 700);
-                                WBishop2 = new BPrint("WBishop.png", 500, 700);
-                                WKnight2 = new BPrint("WKnight.png", 600, 700);
-                                WRook2 = new BPrint("WRook.png", 700, 700);
-                                WPawn1 = new BPrint("WPawn.png", 0, 600);
-                                WPawn2 = new BPrint("WPawn.png", 100, 600);
-                                WPawn3= new BPrint("WPawn.png", 200, 600);
-                                WPawn4 = new BPrint("WPawn.png", 300, 600);
-                                WPawn5 = new BPrint("WPawn.png", 400, 600);
-                                WPawn6 = new BPrint("WPawn.png", 500, 600);
-                                WPawn7 = new BPrint("WPawn.png", 600, 600);
-                                WPawn8 = new BPrint("WPawn.png", 700, 600);  
+                                BRook1 = new Rook(true, 0, 0);
+                                BKnight1 = new Knight(true, 100, 0);
+                                BBishop1 = new Bishop(true, 200, 0);
+                                BQueen = new Queen(true, 300, 0);
+                                BKing = new King(true, 400, 0);
+                                BBishop2 = new Bishop(true, 500, 0);
+                                BKnight2 = new Knight(true, 600, 0);
+                                BRook2 = new Rook(true, 700, 0);
+                                BPawn1 = new Pawn(true, 0, 100);
+                                BPawn2 = new Pawn(true, 100, 100);
+                                BPawn3 = new Pawn(true, 200, 100);
+                                BPawn4 = new Pawn(true, 300, 100);
+                                BPawn5 = new Pawn(true, 400, 100);
+                                BPawn6 = new Pawn(true, 500, 100);
+                                BPawn7 = new Pawn(true, 600, 100);
+                                BPawn8 = new Pawn(true, 700, 100);  
+                                WRook1 = new Rook(false, 0, 700);
+                                WKnight1 = new Knight(false, 100, 700);
+                                WBishop1 = new Bishop(false, 200, 700);
+                                WQueen = new Queen(false, 300, 700);
+                                WKing = new King(false, 400, 700);
+                                WBishop2 = new Bishop(false, 500, 700);
+                                WKnight2 = new Knight(false, 600, 700);
+                                WRook2 = new Rook(false, 700, 700);
+                                WPawn1 = new Pawn(false, 0, 600);
+                                WPawn2 = new Pawn(false, 100, 600);
+                                WPawn3 = new Pawn(false, 200, 600);
+                                WPawn4 = new Pawn(false, 300, 600);
+                                WPawn5 = new Pawn(false, 400, 600);
+                                WPawn6 = new Pawn(false, 500, 600);
+                                WPawn7 = new Pawn(false, 600, 600);
+                                WPawn8 = new Pawn(false, 700, 600);  
                            
                                 
                 }
-                
                 //Overrides the paint method to draw whatever you want.
                 public void paint(Graphics g)
                 {
                                 g.clearRect(0, 0, getWidth(), getHeight());
-                                board.paintSelf(g, this);
+                                g.drawImage(boardimage, 0, 0, null);
                                 BRook1.paintSelf(g, this);
                                 BKnight1.paintSelf(g, this);
                                 BBishop1.paintSelf(g, this);
@@ -140,18 +142,6 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
                 public void actionPerformed(ActionEvent e)
                 {
                 }
-                
-                 public void mouseClicked(MouseEvent e){
-	 
-	   System.out.println("Clicked");
-	   System.out.println(e.getX() + ", " + e.getY() + "   Click Count = "+e.getClickCount());
-
- }
- 
- public void mouseReleased(MouseEvent e){ }
- public void mouseEntered(MouseEvent e){ }
- public void mouseExited(MouseEvent e){ }
- public void mousePressed (MouseEvent e){ }             
 }
  
  

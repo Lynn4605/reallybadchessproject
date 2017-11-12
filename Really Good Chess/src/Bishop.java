@@ -1,15 +1,6 @@
-public class Bishop extends Piece{
-	private int ycoordinate;
-	private int xcoordinate;
-	private boolean color;
+public class Bishop extends BPrint{
 	public Bishop(boolean c, int x, int y) {
-		ycoordinate = y;
-		xcoordinate = x;
-		color = c;
+		super("Bishop.png", x,y,c);
 	}
 	
-	for(ycoordinate+=100, xcoordinate+=100; 
-    
-    
-  }
 }
