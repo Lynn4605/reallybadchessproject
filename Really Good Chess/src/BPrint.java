@@ -10,16 +10,14 @@ import javax.imageio.*;
 public class BPrint {
 	// change/add instance variables as needed
 	BufferedImage img;
-	Scanner imag = new Scanner(System.in);
-	String image = imag.next();
-	Scanner xcoordinate = new Scanner(System.in);
-	int x = xcoordinate.nextInt();
-	Scanner ycoordinate = new Scanner(System.in);
-	int y=ycoordinate.nextInt();
-	public BPrint() {
+	int xcoordinate;
+	int ycoordinate;
+	public BPrint(String image, int x, int y) {
 		// img = new ImageIcon("").getImage();
 		try {
 			img = ImageIO.read(new File(image));
+			xcoordinate = x;
+			ycoordinate = y;
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
@@ -27,7 +25,7 @@ public class BPrint {
 
 	// Overrides the paint method to draw whatever you want.
 	public void paintSelf(Graphics g, ImageObserver i) {
-		g.drawImage(img, x, y, i);
+		g.drawImage(img, xcoordinate, ycoordinate, i);
 
 	}
 

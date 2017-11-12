@@ -11,46 +11,43 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
  
-public class AnimationPanel extends JPanel implements ActionListener, MouseListener
+public class AnimationPanel extends JPanel implements ActionListener
 {
                 private Timer t;
                 private BPrint board;
-                private BPrint BPiece1;
-                private BPrint BPiece2;
-                private BPrint BPiece3;
-                private BPrint BPiece4;
-                private BPrint BPiece5;
-                private BPrint BPiece6;
-                private BPrint BPiece7;
-                private BPrint BPiece8;
-                private BPrint BPiece9;
-                private BPrint BPiece10;
-                private BPrint BPiece11;
-                private BPrint BPiece12;
-                private BPrint BPiece13;
-                private BPrint BPiece14;
-                private BPrint BPiece15;
-                private BPrint BPiece16;
-                private BPrint WPiece1;
-                private BPrint WPiece2;
-                private BPrint WPiece3;
-                private BPrint WPiece4;
-                private BPrint WPiece5;
-                private BPrint WPiece6;
-                private BPrint WPiece7;
-                private BPrint WPiece8;
-                private BPrint WPiece9;
-                private BPrint WPiece10;
-                private BPrint WPiece11;
-                private BPrint WPiece12;
-                private BPrint WPiece13;
-                private BPrint WPiece14;
-                private BPrint WPiece15;
-                private BPrint WPiece16;
+                private BPrint BRook1;
+                private BPrint BKnight1;
+                private BPrint BBishop1;
+                private BPrint BQueen;
+                private BPrint BKing;
+                private BPrint BBishop2;
+                private BPrint BKnight2;
+                private BPrint BRook2;
+                private BPrint BPawn1;
+                private BPrint BPawn2;
+                private BPrint BPawn3;
+                private BPrint BPawn4;
+                private BPrint BPawn5;
+                private BPrint BPawn6;
+                private BPrint BPawn7;
+                private BPrint BPawn8;
+                private BPrint WRook1;
+                private BPrint WKnight1;
+                private BPrint WBishop1;
+                private BPrint WQueen;
+                private BPrint WKing;
+                private BPrint WBishop2;
+                private BPrint WKnight2;
+                private BPrint WRook2;
+                private BPrint WPawn1;
+                private BPrint WPawn2;
+                private BPrint WPawn3;
+                private BPrint WPawn4;
+                private BPrint WPawn5;
+                private BPrint WPawn6;
+                private BPrint WPawn7;
+                private BPrint WPawn8;
                 //change/add instance variables as needed
                 
                 public AnimationPanel()
@@ -58,39 +55,40 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
                                
                                 t = new Timer(20,this);
                                 t.start();
-                                board = new BPrint();
-                                BPiece1 = new BPrint();
-                                BPiece2 = new BPrint();
-                                BPiece3 = new BPrint();
-                                BPiece4 = new BPrint();
-                                BPiece5 = new BPrint();
-                                BPiece6 = new BPrint();
-                                BPiece7 = new BPrint();
-                                BPiece8 = new BPrint();
-                                BPiece9 = new BPrint();
-                                BPiece10 = new BPrint();
-                                BPiece11 = new BPrint();
-                                BPiece12 = new BPrint();
-                                BPiece13 = new BPrint();
-                                BPiece14 = new BPrint();
-                                BPiece15 = new BPrint();
-                                BPiece16 = new BPrint();
-                                WPiece1 = new BPrint();
-                                WPiece2 = new BPrint();
-                                WPiece3 = new BPrint();
-                                WPiece4 = new BPrint();
-                                WPiece5 = new BPrint();
-                                WPiece6 = new BPrint();
-                                WPiece7 = new BPrint();
-                                WPiece8 = new BPrint();
-                                WPiece9 = new BPrint();
-                                WPiece10 = new BPrint();
-                                WPiece11 = new BPrint();
-                                WPiece12 = new BPrint();
-                                WPiece13 = new BPrint();
-                                WPiece14 = new BPrint();
-                                WPiece15 = new BPrint();
-                                WPiece16 = new BPrint();
+                                board = new BPrint("board.jpg", 0, 0);
+                                BRook1 = new BPrint("BRook.png", 0, 0);
+                                BKnight1 = new BPrint("BKnight.png", 100, 0);
+                                BBishop1 = new BPrint("BBishop.png", 200, 0);
+                                BQueen = new BPrint("BQueen.png", 300, 0);
+                                BKing = new BPrint("BKing.png", 400, 0);
+                                BBishop2 = new BPrint("BBishop.png", 500, 0);
+                                BKnight2 = new BPrint("BKnight.png", 600, 0);
+                                BRook2 = new BPrint("BRook.png", 700, 0);
+                                BPawn1 = new BPrint("BPawn.png", 0, 100);
+                                BPawn2 = new BPrint("BPawn.png", 100, 100);
+                                BPawn3 = new BPrint("BPawn.png", 200, 100);
+                                BPawn4 = new BPrint("BPawn.png", 300, 100);
+                                BPawn5 = new BPrint("BPawn.png", 400, 100);
+                                BPawn6 = new BPrint("BPawn.png", 500, 100);
+                                BPawn7 = new BPrint("BPawn.png", 600, 100);
+                                BPawn8 = new BPrint("BPawn.png", 700, 100);  
+                                WRook1 = new BPrint("WRook.png", 0, 700);
+                                WKnight1 = new BPrint("WKnight.png", 100, 700);
+                                WBishop1 = new BPrint("WBishop.png", 200, 700);
+                                WQueen = new BPrint("WQueen.png", 300, 700);
+                                WKing = new BPrint("WKing.png", 400, 700);
+                                WBishop2 = new BPrint("WBishop.png", 500, 700);
+                                WKnight2 = new BPrint("WKnight.png", 600, 700);
+                                WRook2 = new BPrint("WRook.png", 700, 700);
+                                WPawn1 = new BPrint("WPawn.png", 0, 600);
+                                WPawn2 = new BPrint("WPawn.png", 100, 600);
+                                WPawn3= new BPrint("WPawn.png", 200, 600);
+                                WPawn4 = new BPrint("WPawn.png", 300, 600);
+                                WPawn5 = new BPrint("WPawn.png", 400, 600);
+                                WPawn6 = new BPrint("WPawn.png", 500, 600);
+                                WPawn7 = new BPrint("WPawn.png", 600, 600);
+                                WPawn8 = new BPrint("WPawn.png", 700, 600);  
+                           
                                 
                 }
                 
@@ -99,38 +97,39 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
                 {
                                 g.clearRect(0, 0, getWidth(), getHeight());
                                 board.paintSelf(g, this);
-                                BPiece1.paintSelf(g, this);
-                                BPiece2.paintSelf(g, this);
-                                BPiece3.paintSelf(g, this);
-                                BPiece4.paintSelf(g, this);
-                                BPiece5.paintSelf(g, this);
-                                BPiece6.paintSelf(g, this);
-                                BPiece7.paintSelf(g, this);
-                                BPiece8.paintSelf(g, this);
-                                BPiece9.paintSelf(g, this);
-                                BPiece10.paintSelf(g, this);
-                                BPiece11.paintSelf(g, this);
-                                BPiece12.paintSelf(g, this);
-                                BPiece13.paintSelf(g, this);
-                                BPiece14.paintSelf(g, this);
-                                BPiece15.paintSelf(g, this);
-                                BPiece16.paintSelf(g, this);
-                                WPiece1.paintSelf(g, this);
-                                WPiece2.paintSelf(g, this);
-                                WPiece3.paintSelf(g, this);
-                                WPiece4.paintSelf(g, this);
-                                WPiece5.paintSelf(g, this);
-                                WPiece6.paintSelf(g, this);
-                                WPiece7.paintSelf(g, this);
-                                WPiece8.paintSelf(g, this);
-                                WPiece9.paintSelf(g, this);
-                                WPiece10.paintSelf(g, this);
-                                WPiece11.paintSelf(g, this);
-                                WPiece12.paintSelf(g, this);
-                                WPiece13.paintSelf(g, this);
-                                WPiece14.paintSelf(g, this);
-                                WPiece15.paintSelf(g, this);
-                                WPiece16.paintSelf(g, this);
+                                BRook1.paintSelf(g, this);
+                                BKnight1.paintSelf(g, this);
+                                BBishop1.paintSelf(g, this);
+                                BQueen.paintSelf(g, this);
+                                BKing.paintSelf(g, this);
+                                BBishop2.paintSelf(g, this);
+                                BKnight2.paintSelf(g, this);
+                                BRook2.paintSelf(g, this);
+                                BPawn1.paintSelf(g, this);
+                                BPawn2.paintSelf(g, this);
+                                BPawn3.paintSelf(g, this);
+                                BPawn4.paintSelf(g, this);
+                                BPawn5.paintSelf(g, this);
+                                BPawn6.paintSelf(g, this);
+                                BPawn7.paintSelf(g, this);
+                                BPawn8.paintSelf(g, this);
+                                WRook1.paintSelf(g, this);
+                                WKnight1.paintSelf(g, this);
+                                WBishop1.paintSelf(g, this);
+                                WQueen.paintSelf(g, this);
+                                WKing.paintSelf(g, this);
+                                WBishop2.paintSelf(g, this);
+                                WKnight2.paintSelf(g, this);
+                                WRook2.paintSelf(g, this);
+                                WPawn1.paintSelf(g, this);
+                                WPawn2.paintSelf(g, this);
+                                WPawn3.paintSelf(g, this);
+                                WPawn4.paintSelf(g, this);
+                                WPawn5.paintSelf(g, this);
+                                WPawn6.paintSelf(g, this);
+                                WPawn7.paintSelf(g, this);
+                                WPawn8.paintSelf(g, this);
+                               
                            
                 }
                 
@@ -138,19 +137,6 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
                 public void actionPerformed(ActionEvent e)
                 {
                 }
-                
-   public void mouseClicked(MouseEvent e){
-	 
- System.out.println("Clicked");
- System.out.println(e.getX() + ", " + e.getY() + "   Click Count = "+e.getClickCount());
-
- }
- 
- public void mouseReleased(MouseEvent e){ }
- public void mouseEntered(MouseEvent e){ }
- public void mouseExited(MouseEvent e){ }
- public void mousePressed (MouseEvent e){ }               
-                
 }
  
  
