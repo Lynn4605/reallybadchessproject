@@ -15,7 +15,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
  
-public class AnimationPanel extends JPanel implements ActionListener, Mouselistener
+public class AnimationPanel extends JPanel implements ActionListener, MouseListener
 {
                 private Timer t;
                 private BPrint board;
