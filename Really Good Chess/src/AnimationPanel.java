@@ -94,6 +94,7 @@ public class AnimationPanel extends JPanel implements ActionListener
                                 WPawn6 = new Pawn(false, 500, 600);
                                 WPawn7 = new Pawn(false, 600, 600);
                                 WPawn8 = new Pawn(false, 700, 600);  
+				addMouseListener(this);
                            
                                 
                 }
@@ -142,6 +143,25 @@ public class AnimationPanel extends JPanel implements ActionListener
                 public void actionPerformed(ActionEvent e)
                 {
                 }
+   int clicknum = 0;
+                 public void mouseClicked(MouseEvent e){
+	 
+	   System.out.println("Clicked");
+	   
+	   clicknum++;
+	   if (clicknum == 3) {
+		   clicknum = 1;
+	   }
+	   System.out.println(e.getX() + ", " + e.getY() + "   # = " + clicknum);
+	   
+
+ }
+
+ public void mouseReleased(MouseEvent e){ }
+ public void mouseEntered(MouseEvent e){ }
+ public void mouseExited(MouseEvent e){ }
+ public void mousePressed (MouseEvent e){ }             
+}
 }
  
  
