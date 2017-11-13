@@ -32,8 +32,10 @@ public class BPrint {
 	}
 
 	// Overrides the paint method to draw whatever you want.
-	public void paintSelf(Graphics g, ImageObserver i) {
-		g.drawImage(img, xcoordinate, ycoordinate, i);
+	public void paintSelf(Graphics g, int xplace, int yplace, ImageObserver i) {
+		int xprintplace = xplace;
+		int yprintplace = yplace;
+		g.drawImage(img, xprintplace, yprintplace, i);
 
 	}
 

@@ -23,25 +23,9 @@ public class AnimationPanel extends JPanel implements MouseListener {
 			ioe.printStackTrace();
 		}
 	}
-	BufferedImage tilelight;
-	{
-		try {
-			tilelight = ImageIO.read(new File("Lightile.png"));
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		}
-	}
-	BufferedImage tiledark;
-	{
-		try {
-			tiledark = ImageIO.read(new File("Darktile.png"));
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		}
-	}
 	int clicknum = 0;
-
-	private Timer t;
+	private BPrint Ltile;
+	private BPrint Dtile;
 	private Rook BRook1;
 	private Knight BKnight1;
 	private Bishop BBishop1;
@@ -78,6 +62,8 @@ public class AnimationPanel extends JPanel implements MouseListener {
 	BPrint[] board = new BPrint[64];
 
 	public AnimationPanel() {
+		Ltile = new BPrint("Lightile.png", 0, 0, false);
+		Dtile = new BPrint("Darktile.png", 100, 0, true);
 		BRook1 = new Rook(true, 0, 0);
 		BKnight1 = new Knight(true, 100, 0);
 		BBishop1 = new Bishop(true, 200, 0);
@@ -182,38 +168,38 @@ public class AnimationPanel extends JPanel implements MouseListener {
 	public void paint(Graphics g) {
 		g.clearRect(0, 0, getWidth(), getHeight());
 		g.drawImage(boardimage, 0, 0, null);
-		BRook1.paintSelf(g, this);
-		BKnight1.paintSelf(g, this);
-		BBishop1.paintSelf(g, this);
-		BQueen.paintSelf(g, this);
-		BKing.paintSelf(g, this);
-		BBishop2.paintSelf(g, this);
-		BKnight2.paintSelf(g, this);
-		BRook2.paintSelf(g, this);
-		BPawn1.paintSelf(g, this);
-		BPawn2.paintSelf(g, this);
-		BPawn3.paintSelf(g, this);
-		BPawn4.paintSelf(g, this);
-		BPawn5.paintSelf(g, this);
-		BPawn6.paintSelf(g, this);
-		BPawn7.paintSelf(g, this);
-		BPawn8.paintSelf(g, this);
-		WRook1.paintSelf(g, this);
-		WKnight1.paintSelf(g, this);
-		WBishop1.paintSelf(g, this);
-		WQueen.paintSelf(g, this);
-		WKing.paintSelf(g, this);
-		WBishop2.paintSelf(g, this);
-		WKnight2.paintSelf(g, this);
-		WRook2.paintSelf(g, this);
-		WPawn1.paintSelf(g, this);
-		WPawn2.paintSelf(g, this);
-		WPawn3.paintSelf(g, this);
-		WPawn4.paintSelf(g, this);
-		WPawn5.paintSelf(g, this);
-		WPawn6.paintSelf(g, this);
-		WPawn7.paintSelf(g, this);
-		WPawn8.paintSelf(g, this);
+		BRook1.paintSelf(g, 0, 0, this);
+		BKnight1.paintSelf(g, 100, 0, this);
+		BBishop1.paintSelf(g, 200, 0, this);
+		BQueen.paintSelf(g, 300, 0, this);
+		BKing.paintSelf(g, 400, 0, this);
+		BBishop2.paintSelf(g, 500, 0, this);
+		BKnight2.paintSelf(g, 600, 0, this);
+		BRook2.paintSelf(g, 700, 0, this);
+		BPawn1.paintSelf(g, 0, 100, this);
+		BPawn2.paintSelf(g, 100, 100, this);
+		BPawn3.paintSelf(g, 200, 100, this);
+		BPawn4.paintSelf(g, 300, 100, this);
+		BPawn5.paintSelf(g, 400, 100, this);
+		BPawn6.paintSelf(g, 500, 100, this);
+		BPawn7.paintSelf(g, 600, 100, this);
+		BPawn8.paintSelf(g, 700, 100, this);
+		WRook1.paintSelf(g, 0, 700, this);
+		WKnight1.paintSelf(g, 100, 700, this);
+		WBishop1.paintSelf(g, 200, 700, this);
+		WQueen.paintSelf(g, 300, 700, this);
+		WKing.paintSelf(g, 400, 700, this);
+		WBishop2.paintSelf(g, 500, 700, this);
+		WKnight2.paintSelf(g, 600, 700, this);
+		WRook2.paintSelf(g, 700, 700, this);
+		WPawn1.paintSelf(g, 0, 600, this);
+		WPawn2.paintSelf(g, 100, 600, this);
+		WPawn3.paintSelf(g, 200, 600, this);
+		WPawn4.paintSelf(g, 300, 600, this);
+		WPawn5.paintSelf(g, 400, 600, this);
+		WPawn6.paintSelf(g, 500, 600, this);
+		WPawn7.paintSelf(g, 600, 600, this);
+		WPawn8.paintSelf(g, 700, 600, this);
 
 	}
 
@@ -222,9 +208,13 @@ public class AnimationPanel extends JPanel implements MouseListener {
 	int index=40;
 	public void mouseClicked(MouseEvent e) {
 		clicknum++;
+		int yinitial = 400;
+		int xinitial = 400;
 		if (clicknum == 1) {
 			int ybox = e.getY();
 			int xbox = e.getX();
+			yinitial = (ybox/100)*100;
+			xinitial = (xbox/100)*100;
 			index = ((ybox / 100) * 8) + ((xbox / 100));
 			if (board[index] != null) {
 				System.out.println("Piece Selected: " + board[index]);
@@ -237,9 +227,17 @@ public class AnimationPanel extends JPanel implements MouseListener {
 			int y2 = e.getY();
 			int x2 = e.getX();
 			int index2 = ((y2 / 100) * 8) + ((x2 / 100));
+			int nexty = ((y2/100)*100);
+			int nextx = ((x2/100)*100);
 			if (board[index2] == null) {
 				board[index2] = board[index];
 				board[index] = null;
+				//board[index].paintSelf(g, nextx, nexty, null);
+				if (index%2==1) {
+					//Dtile.paintSelf(g, xinitial, yinitial, null);
+				}
+				else
+					//Ltile.paintSelf(g,  xinitial,  yinitial,  null);
 				System.out.println("Piece moved");
 			}
 			else {
@@ -248,6 +246,17 @@ public class AnimationPanel extends JPanel implements MouseListener {
 				if (color1==color2) {
 					System.out.println("Illegal move! Piece of same color! Try again");
 				} else {
+					if (index%2==1) {
+						//Dtile.paintSelf(g, xinitial, yinitial, null);
+					}
+					else
+						//Ltile.paintSelf(g,  xinitial,  yinitial,  null);
+					//board[index].paintSelf(g, nextx, nexty, null);
+					if (index%2==1) {
+						//Dtile.paintSelf(g, xinitial, yinitial, null);
+					}
+					else
+						//Ltile.paintSelf(g,  xinitial,  yinitial,  null);
 					System.out.println(board[index2] + " has been captured");
 					board[index2] = board[index];
 					board[index] = null;
