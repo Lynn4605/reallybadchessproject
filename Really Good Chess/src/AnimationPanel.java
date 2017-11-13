@@ -11,8 +11,12 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
  
-public class AnimationPanel extends JPanel implements ActionListener
+
+public class AnimationPanel extends JPanel implements ActionListener, MouseListener
 {
 	 BufferedImage boardimage;{
 	 try {
