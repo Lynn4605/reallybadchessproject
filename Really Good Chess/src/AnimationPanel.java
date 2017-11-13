@@ -198,7 +198,7 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 	public void mouseClicked(MouseEvent e) {
 		int ybox = e.getY();
 		int xbox = e.getX();
-		int index = ((ybox/100)*8)+((xbox/100)*8);
+		int index = ((ybox/100)*8)+((xbox/100));
 		if (board[index]!=null) {
 			System.out.println("Piece Selected: " + board[index]);
 			clicknum++;
