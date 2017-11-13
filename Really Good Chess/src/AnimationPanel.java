@@ -210,6 +210,7 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 			if (board[index2]==null) {
 				board[index2]=board[index];
 				board[index]=null;
+				System.out.println("Piece moved");
 				clicknum++;	
 			}
 			if (board[index2]!=null) {
