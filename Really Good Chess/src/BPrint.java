@@ -27,6 +27,9 @@ public class BPrint {
 			ioe.printStackTrace();
 		}
 	}
+	public boolean colorcheck() {
+		return color;
+	}
 
 	// Overrides the paint method to draw whatever you want.
 	public void paintSelf(Graphics g, ImageObserver i) {
