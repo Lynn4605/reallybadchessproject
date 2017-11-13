@@ -147,6 +147,8 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
                 {
                 }
    int clicknum = 0;
+   int lastX = 0;
+   int lastY = 0;
                  public void mouseClicked(MouseEvent e){
 	 
 	   System.out.println("Clicked");
@@ -156,6 +158,8 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 		   clicknum = 1;
 	   }
 	   System.out.println(e.getX() + ", " + e.getY() + "   # = " + clicknum);
+	   lastX = e.getX;
+	   lastY = e.getY;
 	   
 
  }
