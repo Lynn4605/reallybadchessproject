@@ -14,7 +14,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class AnimationPanel extends JPanel implements ActionListener, MouseListener {
+public class AnimationPanel extends JPanel implements MouseListener {
 	BufferedImage boardimage;
 	{
 		try {
@@ -78,9 +78,6 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 	BPrint[] board = new BPrint[64];
 
 	public AnimationPanel() {
-
-		t = new Timer(20, this);
-		t.start();
 		BRook1 = new Rook(true, 0, 0);
 		BKnight1 = new Knight(true, 100, 0);
 		BBishop1 = new Bishop(true, 200, 0);
@@ -129,14 +126,38 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 		board[13] = BPawn6;
 		board[14] = BPawn7;
 		board[15] = BPawn8;
-		board[56] = WRook1;
-		board[57] = WKnight1;
-		board[58] = WBishop1;
-		board[59] = WQueen;
-		board[60] = WKing;
-		board[61] = WBishop2;
-		board[62] = WKnight2;
-		board[63] = WRook2;
+		board[16] = null;
+		board[17] = null;
+		board[18] = null;
+		board[19] = null;
+		board[20] = null;
+		board[21] = null;
+		board[22] = null;
+		board[23] = null;
+		board[24] = null;
+		board[25] = null;
+		board[26] = null;
+		board[27] = null;
+		board[28] = null;
+		board[29] = null;
+		board[30] = null;
+		board[31] = null;
+		board[32] = null;
+		board[33] = null;
+		board[34] = null;
+		board[35] = null;
+		board[36] = null;
+		board[37] = null;
+		board[38] = null;
+		board[39] = null;
+		board[40] = null;
+		board[41] = null;
+		board[42] = null;
+		board[43] = null;
+		board[44] = null;
+		board[45] = null;
+		board[46] = null;
+		board[47] = null;
 		board[48] = WPawn1;
 		board[49] = WPawn2;
 		board[50] = WPawn3;
@@ -145,6 +166,14 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 		board[53] = WPawn6;
 		board[54] = WPawn7;
 		board[55] = WPawn8;
+		board[56] = WRook1;
+		board[57] = WKnight1;
+		board[58] = WBishop1;
+		board[59] = WQueen;
+		board[60] = WKing;
+		board[61] = WBishop2;
+		board[62] = WKnight2;
+		board[63] = WRook2;
 		addMouseListener(this);
 
 	}
@@ -190,18 +219,18 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 
 	// Modify this method as needed.
 
-	public void actionPerformed(ActionEvent e) {
-	}
-
+	int index=40;
 	public void mouseClicked(MouseEvent e) {
 		clicknum++;
-		int index = 0;
 		if (clicknum == 1) {
 			int ybox = e.getY();
 			int xbox = e.getX();
 			index = ((ybox / 100) * 8) + ((xbox / 100));
 			if (board[index] != null) {
 				System.out.println("Piece Selected: " + board[index]);
+			} else {
+				clicknum = 0;
+				System.out.println("Blank square, please click again");
 			}
 		}
 		if (clicknum == 2) {
@@ -212,23 +241,21 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 				board[index2] = board[index];
 				board[index] = null;
 				System.out.println("Piece moved");
-				clicknum++;
 			}
-			if (board[index2] != null) {
-				if ((board[index2].colorcheck()) != (board[index].colorcheck())) {
+			else {
+				boolean color1 = board[index].colorcheck();
+				boolean color2 = board[index2].colorcheck();
+				if (color1==color2) {
+					System.out.println("Illegal move! Piece of same color! Try again");
+				} else {
 					System.out.println(board[index2] + " has been captured");
 					board[index2] = board[index];
 					board[index] = null;
-					clicknum++;
-				} else if ((board[index2].colorcheck()) == (board[index].colorcheck())) {
-					System.out.println("Illegal move! Piece of same color occupying spot, please try again");
 				}
 			}
+			clicknum=0;
 		}
 
-		if (clicknum == 3) {
-			clicknum = 0;
-		}
 		System.out.println(e.getX() + ", " + e.getY() + "   # = " + clicknum);
 
 	}
