@@ -206,7 +206,7 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 		if (clicknum==2) {
 			int y2=e.getY();
 			int x2=e.getX();
-			int index2=((y2/100)*8)+((x2/100)*8);
+			int index2=((y2/100)*8)+((x2/100));
 			if (board[index2]==null) {
 				board[index2]=board[index];
 				board[index]=null;
