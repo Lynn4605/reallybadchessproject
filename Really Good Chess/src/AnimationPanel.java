@@ -39,8 +39,7 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 			ioe.printStackTrace();
 		}
 	}
-
-
+	int clicknum = 0;
 
 	private Timer t;
 	private Rook BRook1;
@@ -190,44 +189,45 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 	}
 
 	// Modify this method as needed.
+
 	public void actionPerformed(ActionEvent e) {
 	}
 
-	int clicknum = 0;
-
 	public void mouseClicked(MouseEvent e) {
-		int ybox = e.getY();
-		int xbox = e.getX();
-		int index = ((ybox/100)*8)+((xbox/100));
-		if (board[index]!=null) {
-			System.out.println("Piece Selected: " + board[index]);
-			clicknum++;
-		}
-		if (clicknum==2) {
-			int y2=e.getY();
-			int x2=e.getX();
-			int index2=((y2/100)*8)+((x2/100));
-			if (board[index2]==null) {
-				board[index2]=board[index];
-				board[index]=null;
-				System.out.println("Piece moved");
-				clicknum++;	
+		clicknum++;
+		int index = 0;
+		if (clicknum == 1) {
+			int ybox = e.getY();
+			int xbox = e.getX();
+			index = ((ybox / 100) * 8) + ((xbox / 100));
+			if (board[index] != null) {
+				System.out.println("Piece Selected: " + board[index]);
 			}
-			if (board[index2]!=null) {
-				if(board[index2].colorcheck()!=board[index].colorcheck()) {
+		}
+		if (clicknum == 2) {
+			int y2 = e.getY();
+			int x2 = e.getX();
+			int index2 = ((y2 / 100) * 8) + ((x2 / 100));
+			if (board[index2] == null) {
+				board[index2] = board[index];
+				board[index] = null;
+				System.out.println("Piece moved");
+				clicknum++;
+			}
+			if (board[index2] != null) {
+				if ((board[index2].colorcheck()) != (board[index].colorcheck())) {
 					System.out.println(board[index2] + " has been captured");
-					board[index2]=board[index];
-					board[index]=null;
+					board[index2] = board[index];
+					board[index] = null;
 					clicknum++;
-				}
-				else {
+				} else if ((board[index2].colorcheck()) == (board[index].colorcheck())) {
 					System.out.println("Illegal move! Piece of same color occupying spot, please try again");
 				}
 			}
 		}
-		
+
 		if (clicknum == 3) {
-			clicknum = 1;
+			clicknum = 0;
 		}
 		System.out.println(e.getX() + ", " + e.getY() + "   # = " + clicknum);
 
@@ -236,7 +236,6 @@ public class AnimationPanel extends JPanel implements ActionListener, MouseListe
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
