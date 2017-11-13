@@ -155,6 +155,16 @@ public class AnimationPanel extends JPanel implements ActionListener
 	   
 
  }
+ 
+ int counterTurn = 0;
+	
+	if(counterTurn %2 == 0){
+	pl
+	}
+	
+	if(counterTurn %2 == 1){
+	
+	}
 
  public void mouseReleased(MouseEvent e){ }
  public void mouseEntered(MouseEvent e){ }
